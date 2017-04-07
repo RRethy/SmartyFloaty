@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.spudapps.rethy.smartyfloaty.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <Button
+            android:id="@+id/enable_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enable SmartyFloaty" />
+        <Button
+            android:id="@+id/start_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start SmartyFloaty"
+            android:layout_below="@+id/enable_button"/>
+        <Button
+            android:id="@+id/disable_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Disable SmartyFloaty"
+            android:layout_below="@+id/start_button"/>
+        <Button
+            android:id="@+id/stop_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Stop SmartyFloaty"
+            android:layout_below="@+id/disable_button"/>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
