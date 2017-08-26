@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.spudapps.rethy.smartyfloaty.Services.SmartyFloatyAccessibilityService;
 
@@ -17,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
 
     private Button enabledButton;
     private Button startButton;
-    private Button disableButton;
     private Button stopButton;
     private AlertDialog accessibilityDialog;
 
@@ -44,16 +44,17 @@ public class MainActivity extends AppCompatActivity {
                                 "the Accessibility permission and how it is used to automatically " +
                                 "disable the view to avoid the \"Screen Overlay Detected\" popup")
                                 .setTitle("Auto-Disable");
-                        builder.setPositiveButton("Auto-disable", new DialogInterface.OnClickListener() {
+                        builder.setPositiveButton("enable", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 Intent intent = new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS);
                                 startActivityForResult(intent,
                                         SmartyFloatyAccessibilityService.ACCESSIBILITY_REQUEST_CODE);
                             }
                         });
-                        builder.setNegativeButton("No Thanks", new DialogInterface.OnClickListener() {
+                        builder.setNegativeButton("no thanks", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.dismiss();
+                                Toast.makeText(MainActivity.this, "SmartyFloaty is not enable", Toast.LENGTH_LONG).show();
                             }
                         });
                         accessibilityDialog = builder.create();
@@ -71,16 +72,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.v(LOG_TAG, "Start button clicked");
                 // Start the service
-            }
-        });
-
-        this.disableButton = (Button) findViewById(R.id.disable_button);
-        this.disableButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.v(LOG_TAG, "Disable button clicked");
-                // Send the user to disable Accessibility
-                // Send the user to disable overlay
             }
         });
 

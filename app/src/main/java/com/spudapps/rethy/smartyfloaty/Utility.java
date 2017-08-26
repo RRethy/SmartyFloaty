@@ -28,7 +28,7 @@ public class Utility {
 
     /**
      * Use the method above to find the id that needs to be passed for this method
-     * Currently, we pass: BuildConfig.APPLICATION_ID + "/com.wemesh.android.Services.FloatingAccessibilityService"
+     * Currently, we pass: BuildConfig.APPLICATION_ID + "/.Services.SmartyFloatyAccessibilityService"
      * This will only ever change if we move the location of the Accessibility Service
      * */
     public static boolean isAccessibilityEnabled(Context context, String id) {
