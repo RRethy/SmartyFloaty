@@ -40,7 +40,7 @@ public class SmartyFloatyAccessibilityService extends AccessibilityService{
                     }
                 }
             } catch (Exception e) {
-
+                // Nothing needs to be done if it fails
             }
         }
     }
