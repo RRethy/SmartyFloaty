@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.view.accessibility.AccessibilityEvent;
 
-public class SmartyFloatyAccessibilityService extends AccessibilityService{
+public class SmartyFloatyAccessibilityService extends AccessibilityService {
     private static final String LOG_TAG = SmartyFloatyService.class.getSimpleName();
 
     private static final int EVENT_TYPE_ACTION_WINDOW = 32;

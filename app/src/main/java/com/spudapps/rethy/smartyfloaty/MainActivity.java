@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == OVERLAY_REQUEST_CODE && Settings.canDrawOverlays(MainActivity.this)) {
-            showOverlay();
+            requestOverlayPermission();
         }
     }
 
@@ -83,13 +83,13 @@ public class MainActivity extends Activity {
                     Intent intent = new Intent(MainActivity.this, SmartyFloatyService.class);
                     startService(intent);
                 } else {
-                    showOverlay();
+                    requestOverlayPermission();
                 }
             }
         });
     }
 
-    private void showOverlay() {
+    private void requestOverlayPermission() {
         Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
                 Uri.parse("package:" +getApplicationContext().getPackageName()));
         startActivityForResult(intent, OVERLAY_REQUEST_CODE);
